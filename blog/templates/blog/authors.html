@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+    <head>
+        <title>Django Blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+
+    <body>
+        <div class="page-header">
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
+
+        <div class="container">
+            {% for author in authors %}
+                <div class="col-md-4">
+                    <h2> {{author.first_name}} {{author.last_name}}</h2>
+                    <h5>{{author.email}}</h5>
+                    <h5>{{author.birth_year}}</h5>
+                    <h5>{{author.telephone}}</h5>
+                </div>
+            {% endfor %}
+        </div>
+
+    </body>
+</html>
