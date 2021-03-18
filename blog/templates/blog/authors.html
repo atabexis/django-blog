@@ -1,21 +1,19 @@
+{% extends 'blog/base.html' %}
 {% load static %}
-<html>
-    <head>
-        <title>Django Blog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
 
+{% block content %}
     <body>
-        <div class="page-header">
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
+        {% include 'blog/header.html' %}
 
         <div class="container">
             {% for author in authors %}
                 <div class="col-md-4">
+                    {% if author.avatar %}
+                        <img class="avatar-img" src="{{author.avatar.url}}">
+                    {% else %}
+                        <img class="avatar-img" src="{% static 'images/images.png' %}">
+                    {% endif %}
+                    
                     <h2> {{author.first_name}} {{author.last_name}}</h2>
                     <h5>{{author.email}}</h5>
                     <h5>{{author.birth_year}}</h5>
@@ -25,4 +23,4 @@
         </div>
 
     </body>
-</html>
+{% endblock %}
