@@ -1,5 +1,13 @@
 from django.shortcuts import render
 from .models import Post, Author
+#GET
+#POST 
+def login(request):
+    if request.method == 'GET':
+        return render(request, 'blog/login.html')
+    else:
+        
+        pass 
 
 def post_list(request):
     # ORM - object relational mapper 

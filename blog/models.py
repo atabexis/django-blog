@@ -1,13 +1,15 @@
 from django.db import models
 from django.utils import timezone 
 from django.conf import settings
+from django.contrib.auth.models import User
 
 GENDER_OPTIONS = (
     ('M', 'Man'),
     ('W', 'Woman')    
 )
 
-class Author(models.Model):    
+class Author(models.Model):  
+    user = models.OneToOneField(User, on_delete=models.CASCADE)  
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
