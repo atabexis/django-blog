@@ -25,6 +25,7 @@ h2,p {
     outline:none;
     border-radius: 5px;
     cursor: pointer;
+    display: block;
 }
 
 .register-form p[class="error"], .login-form p[class="error"]  {
