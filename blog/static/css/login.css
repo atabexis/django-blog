@@ -1,0 +1,36 @@
+h2,p {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.login-form, .register-form {
+    width: 100%;
+}
+
+.login-form input[type="text"], input[type="password"], input[type="email"], .register-form input[type="text"]{
+    border: 1px solid #ccc;
+    width:40%;
+    background-color: #fff;
+    padding:13px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #1B1B1B;
+    box-sizing: border-box;
+    outline:none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-form p[class="error"], .login-form p[class="error"]  {
+    color: #ca1515;
+}
+
+.register-form p[class="success"] {
+    color: green;
+}
