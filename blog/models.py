@@ -11,16 +11,15 @@ GENDER_OPTIONS = (
 class Author(models.Model):  
     user = models.OneToOneField(User, on_delete=models.CASCADE)  
     first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    email = models.EmailField()
-    address = models.TextField()
-    telephone = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=100)    
+    address = models.TextField(blank=True, null=True)
+    telephone = models.CharField(max_length=30, blank=True, null=True)
     birth_year = models.DateField(blank=True, null=True)
-    gender = models.CharField(max_length=1, choices=GENDER_OPTIONS)
+    gender = models.CharField(max_length=1, choices=GENDER_OPTIONS, blank=True, null=True)
     avatar = models.ImageField(upload_to='avatars', blank=True, null=True)
     
     def __str__(self):
-        return f'{self.first_name} {self.last_name}' 
+        return f'{self.first_name} {self.last_name} {self.user.username}' 
 
 # Create your models here.
 class Post(models.Model):

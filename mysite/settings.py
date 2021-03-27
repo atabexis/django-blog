@@ -134,3 +134,13 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+LOGIN_URL = 'login/'
+LOGOUT_REDIRECT_URL = '/login/'
+
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.google.com'
+EMAIL_HOST_USER = 'aidai.beishekeeva@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 587 
+EMAIL_USE_TLS = True #Transport Layer Security 

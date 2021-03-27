@@ -10,7 +10,11 @@ h2,p {
 }
 
 .login-form, .register-form {
-    width: 100%;
+    width: 100%;    
+}
+
+.login-form form {
+    text-align: center;
 }
 
 .login-form input[type="text"], input[type="password"], input[type="email"], .register-form input[type="text"]{
@@ -24,8 +28,7 @@ h2,p {
     box-sizing: border-box;
     outline:none;
     border-radius: 5px;
-    cursor: pointer;
-    display: block;
+    cursor: pointer;    
 }
 
 .register-form p[class="error"], .login-form p[class="error"]  {
