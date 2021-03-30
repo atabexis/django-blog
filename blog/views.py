@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail 
 from django.conf import settings
+from django.core.paginator import Paginator
 
 def user_login(request):
     if request.method == 'GET':
@@ -51,8 +52,11 @@ def user_register(request):
 
 @login_required 
 def post_list(request):
-    posts = Post.objects.filter() #ORM - select * from posts       
-    return render(request, 'blog/post_list.html', {"posts": posts})
+    posts = Post.objects.filter() #ORM - select * from posts
+    paginator = Paginator(posts, 3)      
+    page_number = request.GET.get('page')
+    posts_obj = paginator.get_page(page_number)
+    return render(request, 'blog/post_list.html', {"posts": posts_obj})
 
 @login_required     
 def author_list(request):
